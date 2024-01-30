@@ -19,7 +19,7 @@ $(function () {
 
 function updateTimeColors() {
 
-  var currentTime = dayjs().hour() - 10;
+  var currentTime = dayjs().hour();
 
   $('.time-block').each(function() {
 
