@@ -3,6 +3,7 @@
 // in the html.
 $(function () {
 
+  getDate();
 
   $('.saveBtn').on('click', function(){
 
@@ -12,8 +13,13 @@ $(function () {
  
   
   // TODO: Add code to display the current date in the header of the page.
-  
-  
+
 });
 
-
+function getDate(){
+  currentDay = dayjs().get('day');
+  currentMonth = dayjs().get('month') + 1;
+  currentYear = dayjs().get('year');
+  currentDate = currentDay + '/' + currentMonth + '/' + currentYear;
+  $('#currentDay').text(currentDate);
+}
