@@ -3,23 +3,21 @@
 // in the html.
 $(function () {
 
-  getDate();
+  $('#currentDay').text(dayjs().format('dddd, MMMM DD, YYYY'));
 
   $('.saveBtn').on('click', function(){
 
     var saveTextBtn = $(this).parent().attr('id');
     localStorage.setItem(saveTextBtn, $(this).siblings('.description').val());
+
   })
  
-  
-  // TODO: Add code to display the current date in the header of the page.
-
 });
 
-function getDate(){
-  currentDay = dayjs().get('day');
-  currentMonth = dayjs().get('month') + 1;
-  currentYear = dayjs().get('year');
-  currentDate = currentDay + '/' + currentMonth + '/' + currentYear;
-  $('#currentDay').text(currentDate);
-}
+
+
+
+
+
+
+
