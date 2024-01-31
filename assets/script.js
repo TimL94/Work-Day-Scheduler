@@ -16,10 +16,11 @@ $(function () {
  
 });
 
-
+// This function is responsible for changing the class of each hour container based on the local time
+// it acomplishes this by taking the id ex 'hour-10' splits it by '-' which returns a list of [hour,10] and than uses the second list item to compare to the current time
 function updateTimeColors() {
 
-  var currentTime = dayjs().hour() - 10;
+  var currentTime = dayjs().hour();
 
   $('.time-block').each(function() {
 
@@ -29,7 +30,7 @@ function updateTimeColors() {
 
       $(this).removeClass('past present').addClass('future');
 
-    } else if (idTime === currentTime){
+    }else if (idTime === currentTime){
 
       $(this).removeClass('future past').addClass('present');
 
@@ -42,8 +43,7 @@ function updateTimeColors() {
 
 }
 
-
-
+// this function populates each time-block text area with the text stored in the user's local storage
 function loadSavedText(){
   $('.time-block').each(function(){
 
